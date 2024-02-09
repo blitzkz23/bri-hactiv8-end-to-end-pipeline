@@ -1,0 +1,23 @@
+[2024-02-06T02:28:20.225+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.processing_user scheduled__2024-02-05T00:00:00+00:00 [queued]>
+[2024-02-06T02:28:20.237+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.processing_user scheduled__2024-02-05T00:00:00+00:00 [queued]>
+[2024-02-06T02:28:20.237+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-06T02:28:20.238+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-06T02:28:20.238+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-06T02:28:20.251+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): processing_user> on 2024-02-05 00:00:00+00:00
+[2024-02-06T02:28:20.257+0000] {standard_task_runner.py:52} INFO - Started process 217 to run task
+[2024-02-06T02:28:20.259+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'sqlite_randomuser', 'processing_user', 'scheduled__2024-02-05T00:00:00+00:00', '--job-id', '80', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_randomuser.py', '--cfg-path', '/tmp/tmp06603a04', '--error-file', '/tmp/tmpr1cbz2dz']
+[2024-02-06T02:28:20.260+0000] {standard_task_runner.py:80} INFO - Job 80: Subtask processing_user
+[2024-02-06T02:28:20.317+0000] {task_command.py:371} INFO - Running <TaskInstance: sqlite_randomuser.processing_user scheduled__2024-02-05T00:00:00+00:00 [running]> on host 0f884a2e3c33
+[2024-02-06T02:28:20.386+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=sqlite_randomuser
+AIRFLOW_CTX_TASK_ID=processing_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-05T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-02-05T00:00:00+00:00
+[2024-02-06T02:28:20.401+0000] {python.py:173} INFO - Done. Returned value was: {"results": [{"gender": "female", "name": {"title": "Mrs", "first": "Naufal", "last": "Reisinger"}, "location": {"street": {"number": 6036, "name": "Dorfstra\u00dfe"}, "city": "Donzdorf", "state": "Sachsen", "country": "Germany", "postcode": 78448, "coordinates": {"latitude": "-49.4841", "longitude": "40.4634"}, "timezone": {"offset": "-8:00", "description": "Pacific Time (US & Canada)"}}, "email": "sophia.reisinger@example.com", "login": {"uuid": "eb82933c-ccce-4b64-b117-058c21b52281", "username": "heavybird396", "password": "basket", "salt": "YX4Rxsog", "md5": "fde6729cea2857ceec668177549683ec", "sha1": "d56cf0a78ca8af3aacb240b1d47009429dd2f3a7", "sha256": "2b95362fa3dacc5271ab9d132fe27d44b8323abc9a2effbaac737d843c61f9a9"}, "dob": {"date": "1976-04-29T02:26:49.788Z", "age": 47}, "registered": {"date": "2017-12-24T22:31:39.303Z", "age": 6}, "phone": "0063-1151702", "cell": "0173-0312318", "id": {"name": "SVNR", "value": "64 280476 R 754"}, "picture": {"large": "https://randomuser.me/api/portraits/women/12.jpg", "medium": "https://randomuser.me/api/portraits/med/women/12.jpg", "thumbnail": "https://randomuser.me/api/portraits/thumb/women/12.jpg"}, "nat": "DE"}], "info": {"seed": "07c9518b729109f0", "results": 1, "page": 1, "version": "1.4"}}
+[2024-02-06T02:28:20.445+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=sqlite_randomuser, task_id=processing_user, execution_date=20240205T000000, start_date=20240206T022820, end_date=20240206T022820
+[2024-02-06T02:28:20.672+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-06T02:28:20.884+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check

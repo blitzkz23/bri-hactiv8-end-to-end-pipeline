@@ -1,0 +1,43 @@
+[2024-02-06T05:22:52.023+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: nyctaxi_elt.create_daily_trips manual__2024-02-06T05:22:42.124267+00:00 [queued]>
+[2024-02-06T05:22:52.033+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: nyctaxi_elt.create_daily_trips manual__2024-02-06T05:22:42.124267+00:00 [queued]>
+[2024-02-06T05:22:52.034+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-06T05:22:52.034+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-06T05:22:52.034+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-06T05:22:52.048+0000] {taskinstance.py:1389} INFO - Executing <Task(PostgresOperator): create_daily_trips> on 2024-02-06 05:22:42.124267+00:00
+[2024-02-06T05:22:52.057+0000] {standard_task_runner.py:52} INFO - Started process 21340 to run task
+[2024-02-06T05:22:52.063+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'nyctaxi_elt', 'create_daily_trips', 'manual__2024-02-06T05:22:42.124267+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/nyctaxi_elt.py', '--cfg-path', '/tmp/tmpjc17zhmg', '--error-file', '/tmp/tmpvdua_91n']
+[2024-02-06T05:22:52.065+0000] {standard_task_runner.py:80} INFO - Job 39: Subtask create_daily_trips
+[2024-02-06T05:22:52.164+0000] {task_command.py:371} INFO - Running <TaskInstance: nyctaxi_elt.create_daily_trips manual__2024-02-06T05:22:42.124267+00:00 [running]> on host 9d3dd91d9998
+[2024-02-06T05:22:52.308+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Aldy
+AIRFLOW_CTX_DAG_ID=nyctaxi_elt
+AIRFLOW_CTX_TASK_ID=create_daily_trips
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-06T05:22:42.124267+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-02-06T05:22:42.124267+00:00
+[2024-02-06T05:22:52.341+0000] {base.py:68} INFO - Using connection ID '***_postgres' for task execution.
+[2024-02-06T05:22:52.345+0000] {sql.py:315} INFO - Running statement: CREATE TABLE IF NOT EXISTS daily_trip_summary AS
+            SELECT 
+                date(lpep_pickup_datetime) AS date,
+                COUNT(*) AS total_trips,
+                SUM(EXTRACT(EPOCH FROM (lpep_dropoff_datetime - lpep_pickup_datetime))) AS total_duration,
+                AVG(EXTRACT(EPOCH FROM (lpep_dropoff_datetime - lpep_pickup_datetime))) AS avg_duration,
+                SUM(passenger_count) AS total_passenger,
+                AVG(passenger_count) AS avg_passenger,
+                SUM(fare_amount) AS total_fares,
+                AVG(fare_amount) AS avg_fares,
+                COUNT(tip_amount) AS count_tips,
+                SUM(tip_amount) AS total_tips,
+                AVG(tip_amount) AS avg_tips,
+                SUM(improvement_surcharge+congestion_surcharge) AS total_surcharge,
+                MAX(payment_type) AS most_payment_type
+            FROM 
+                nyc_taxi
+            GROUP BY 
+                date(lpep_pickup_datetime), parameters: None
+[2024-02-06T05:22:52.369+0000] {sql.py:324} INFO - Rows affected: 3
+[2024-02-06T05:22:52.395+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=nyctaxi_elt, task_id=create_daily_trips, execution_date=20240206T052242, start_date=20240206T052252, end_date=20240206T052252
+[2024-02-06T05:22:52.453+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-06T05:22:52.486+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check

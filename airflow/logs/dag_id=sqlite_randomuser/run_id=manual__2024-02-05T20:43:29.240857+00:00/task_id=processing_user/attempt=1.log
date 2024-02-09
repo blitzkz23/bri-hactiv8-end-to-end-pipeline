@@ -1,0 +1,23 @@
+[2024-02-05T20:43:35.420+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.processing_user manual__2024-02-05T20:43:29.240857+00:00 [queued]>
+[2024-02-05T20:43:35.432+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.processing_user manual__2024-02-05T20:43:29.240857+00:00 [queued]>
+[2024-02-05T20:43:35.433+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T20:43:35.433+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-05T20:43:35.434+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T20:43:35.449+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): processing_user> on 2024-02-05 20:43:29.240857+00:00
+[2024-02-05T20:43:35.456+0000] {standard_task_runner.py:52} INFO - Started process 339918 to run task
+[2024-02-05T20:43:35.458+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'sqlite_randomuser', 'processing_user', 'manual__2024-02-05T20:43:29.240857+00:00', '--job-id', '72', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_randomuser.py', '--cfg-path', '/tmp/tmpmzdoz3hj', '--error-file', '/tmp/tmp7bgg953b']
+[2024-02-05T20:43:35.459+0000] {standard_task_runner.py:80} INFO - Job 72: Subtask processing_user
+[2024-02-05T20:43:35.525+0000] {task_command.py:371} INFO - Running <TaskInstance: sqlite_randomuser.processing_user manual__2024-02-05T20:43:29.240857+00:00 [running]> on host fe2863c78e2f
+[2024-02-05T20:43:35.609+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=sqlite_randomuser
+AIRFLOW_CTX_TASK_ID=processing_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-05T20:43:29.240857+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-02-05T20:43:29.240857+00:00
+[2024-02-05T20:43:35.622+0000] {python.py:173} INFO - Done. Returned value was: {"results": [{"gender": "female", "name": {"title": "Madame", "first": "Naufal", "last": "Morin"}, "location": {"street": {"number": 3225, "name": "Avenue Vauban"}, "city": "Thusis", "state": "Fribourg", "country": "Switzerland", "postcode": 2300, "coordinates": {"latitude": "-63.6140", "longitude": "17.9885"}, "timezone": {"offset": "+9:30", "description": "Adelaide, Darwin"}}, "email": "hedwig.morin@example.com", "login": {"uuid": "6bbe52d4-72c5-4dd2-8330-5af1fb2c7e0a", "username": "angryfrog665", "password": "coldplay", "salt": "kWu2YjXo", "md5": "b41ce6cc5e8c90f8e374c7cc606ca972", "sha1": "7a8d732f6324ae167bb2f379206d5a7cc39958c5", "sha256": "eae8ee091a31eea3c7a69433ac87132ddc1498e95a94619a782e2300bc4b5330"}, "dob": {"date": "1998-06-27T04:07:28.472Z", "age": 25}, "registered": {"date": "2004-01-17T06:32:04.218Z", "age": 20}, "phone": "078 480 66 48", "cell": "077 072 37 69", "id": {"name": "AVS", "value": "756.8806.2586.95"}, "picture": {"large": "https://randomuser.me/api/portraits/women/91.jpg", "medium": "https://randomuser.me/api/portraits/med/women/91.jpg", "thumbnail": "https://randomuser.me/api/portraits/thumb/women/91.jpg"}, "nat": "CH"}], "info": {"seed": "d4004a57597509fc", "results": 1, "page": 1, "version": "1.4"}}
+[2024-02-05T20:43:35.652+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=sqlite_randomuser, task_id=processing_user, execution_date=20240205T204329, start_date=20240205T204335, end_date=20240205T204335
+[2024-02-05T20:43:35.711+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-05T20:43:35.758+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check

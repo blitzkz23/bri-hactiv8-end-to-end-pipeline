@@ -1,0 +1,26 @@
+[2024-02-05T07:22:08.970+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.extracting_user manual__2024-02-05T07:22:04.711771+00:00 [queued]>
+[2024-02-05T07:22:08.984+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.extracting_user manual__2024-02-05T07:22:04.711771+00:00 [queued]>
+[2024-02-05T07:22:08.984+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T07:22:08.985+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-05T07:22:08.985+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T07:22:09.001+0000] {taskinstance.py:1389} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2024-02-05 07:22:04.711771+00:00
+[2024-02-05T07:22:09.008+0000] {standard_task_runner.py:52} INFO - Started process 52559 to run task
+[2024-02-05T07:22:09.010+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'sqlite_randomuser', 'extracting_user', 'manual__2024-02-05T07:22:04.711771+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_randomuser.py', '--cfg-path', '/tmp/tmp_3wf79vd', '--error-file', '/tmp/tmpo1b466ne']
+[2024-02-05T07:22:09.011+0000] {standard_task_runner.py:80} INFO - Job 19: Subtask extracting_user
+[2024-02-05T07:22:09.075+0000] {task_command.py:371} INFO - Running <TaskInstance: sqlite_randomuser.extracting_user manual__2024-02-05T07:22:04.711771+00:00 [running]> on host fe2863c78e2f
+[2024-02-05T07:22:09.162+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=sqlite_randomuser
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-05T07:22:04.711771+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-02-05T07:22:04.711771+00:00
+[2024-02-05T07:22:09.164+0000] {http.py:121} INFO - Calling HTTP method
+[2024-02-05T07:22:09.175+0000] {base.py:68} INFO - Using connection ID 'randomuser_api' for task execution.
+[2024-02-05T07:22:09.177+0000] {http.py:148} INFO - Sending 'GET' to url: http://randomuser.me/api/
+[2024-02-05T07:22:13.143+0000] {http.py:125} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Hirondino","last":"Rocha"},"location":{"street":{"number":4379,"name":"Rua São Sebastiao "},"city":"Duque de Caxias","state":"Bahia","country":"Brazil","postcode":31171,"coordinates":{"latitude":"-73.4705","longitude":"-69.8147"},"timezone":{"offset":"+11:00","description":"Magadan, Solomon Islands, New Caledonia"}},"email":"hirondino.rocha@example.com","login":{"uuid":"7df7d423-c0a7-4f9f-b593-c81e8561da44","username":"organicduck801","password":"ferris","salt":"XaND9L09","md5":"f4a31690d7ed165905cc7fcb30a0d0c9","sha1":"9163d97a1dec449227d1b5a7afd9b50f1f64c728","sha256":"7e1a2e118ea2faad1b14d0f932eb0c7372dff4ee42ac973daab341d3fb553b4f"},"dob":{"date":"1976-06-01T12:36:13.864Z","age":47},"registered":{"date":"2003-11-24T17:55:34.452Z","age":20},"phone":"(53) 4186-2278","cell":"(60) 8139-4422","id":{"name":"CPF","value":"425.543.002-17"},"picture":{"large":"https://randomuser.me/api/portraits/men/90.jpg","medium":"https://randomuser.me/api/portraits/med/men/90.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/90.jpg"},"nat":"BR"}],"info":{"seed":"cdb132c3120a7db1","results":1,"page":1,"version":"1.4"}}
+[2024-02-05T07:22:13.736+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=sqlite_randomuser, task_id=extracting_user, execution_date=20240205T072204, start_date=20240205T072208, end_date=20240205T072213
+[2024-02-05T07:22:13.785+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-05T07:22:13.830+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check

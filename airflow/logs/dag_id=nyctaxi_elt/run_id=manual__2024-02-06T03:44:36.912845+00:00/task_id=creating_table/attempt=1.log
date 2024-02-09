@@ -1,0 +1,46 @@
+[2024-02-06T03:44:38.284+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: nyctaxi_elt.creating_table manual__2024-02-06T03:44:36.912845+00:00 [queued]>
+[2024-02-06T03:44:38.293+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: nyctaxi_elt.creating_table manual__2024-02-06T03:44:36.912845+00:00 [queued]>
+[2024-02-06T03:44:38.293+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-06T03:44:38.294+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-06T03:44:38.294+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-06T03:44:38.307+0000] {taskinstance.py:1389} INFO - Executing <Task(PostgresOperator): creating_table> on 2024-02-06 03:44:36.912845+00:00
+[2024-02-06T03:44:38.314+0000] {standard_task_runner.py:52} INFO - Started process 1613 to run task
+[2024-02-06T03:44:38.322+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'nyctaxi_elt', 'creating_table', 'manual__2024-02-06T03:44:36.912845+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/nyctaxi_elt.py', '--cfg-path', '/tmp/tmp95dec9hb', '--error-file', '/tmp/tmpqapb17eg']
+[2024-02-06T03:44:38.324+0000] {standard_task_runner.py:80} INFO - Job 7: Subtask creating_table
+[2024-02-06T03:44:38.466+0000] {task_command.py:371} INFO - Running <TaskInstance: nyctaxi_elt.creating_table manual__2024-02-06T03:44:36.912845+00:00 [running]> on host 9d3dd91d9998
+[2024-02-06T03:44:38.557+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=nyctaxi_elt
+AIRFLOW_CTX_TASK_ID=creating_table
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-06T03:44:36.912845+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-02-06T03:44:36.912845+00:00
+[2024-02-06T03:44:38.570+0000] {base.py:68} INFO - Using connection ID '***_postgres' for task execution.
+[2024-02-06T03:44:38.574+0000] {sql.py:315} INFO - Running statement: CREATE TABLE IF NOT EXISTS nyc_taxi (
+                vendorid INT,
+                lpep_pickup_datetime TIMESTAMP,
+                lpep_dropoff_datetime TIMESTAMP,
+                store_and_fwd_flag VARCHAR(1),
+                ratecodeid INT,
+                pulocationid INT,
+                dolocationid INT,
+                passenger_count INT,
+                trip_distance FLOAT,
+                fare_amount FLOAT,
+                extra FLOAT,
+                mta_tax FLOAT,
+                tip_amount FLOAT,
+                tolls_amount FLOAT,
+                improvement_surcharge FLOAT,
+                total_amount FLOAT,
+                payment_type INT,
+                trip_type INT,
+                congestion_surcharge FLOAT
+            ), parameters: None
+[2024-02-06T03:44:38.576+0000] {postgres.py:94} INFO - NOTICE:  relation "nyc_taxi" already exists, skipping
+
+[2024-02-06T03:44:38.601+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=nyctaxi_elt, task_id=creating_table, execution_date=20240206T034436, start_date=20240206T034438, end_date=20240206T034438
+[2024-02-06T03:44:38.651+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-06T03:44:38.685+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,26 @@
+[2024-02-05T08:26:16.558+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.extracting_user manual__2024-02-05T08:26:12.530105+00:00 [queued]>
+[2024-02-05T08:26:16.572+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.extracting_user manual__2024-02-05T08:26:12.530105+00:00 [queued]>
+[2024-02-05T08:26:16.573+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T08:26:16.573+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-05T08:26:16.574+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T08:26:16.590+0000] {taskinstance.py:1389} INFO - Executing <Task(SimpleHttpOperator): extracting_user> on 2024-02-05 08:26:12.530105+00:00
+[2024-02-05T08:26:16.597+0000] {standard_task_runner.py:52} INFO - Started process 162181 to run task
+[2024-02-05T08:26:16.599+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'sqlite_randomuser', 'extracting_user', 'manual__2024-02-05T08:26:12.530105+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_randomuser.py', '--cfg-path', '/tmp/tmpokuf2js_', '--error-file', '/tmp/tmpipm7bf6k']
+[2024-02-05T08:26:16.600+0000] {standard_task_runner.py:80} INFO - Job 30: Subtask extracting_user
+[2024-02-05T08:26:16.677+0000] {task_command.py:371} INFO - Running <TaskInstance: sqlite_randomuser.extracting_user manual__2024-02-05T08:26:12.530105+00:00 [running]> on host fe2863c78e2f
+[2024-02-05T08:26:16.770+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=sqlite_randomuser
+AIRFLOW_CTX_TASK_ID=extracting_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-05T08:26:12.530105+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-02-05T08:26:12.530105+00:00
+[2024-02-05T08:26:16.771+0000] {http.py:121} INFO - Calling HTTP method
+[2024-02-05T08:26:16.786+0000] {base.py:68} INFO - Using connection ID 'randomuser_api' for task execution.
+[2024-02-05T08:26:16.788+0000] {http.py:148} INFO - Sending 'GET' to url: http://randomuser.me/api/
+[2024-02-05T08:26:17.870+0000] {http.py:125} INFO - {"results":[{"gender":"female","name":{"title":"Mrs","first":"Debbie","last":"Herrera"},"location":{"street":{"number":5581,"name":"North Street"},"city":"Inverness","state":"Cambridgeshire","country":"United Kingdom","postcode":"EO4 7ZJ","coordinates":{"latitude":"-5.4378","longitude":"143.2895"},"timezone":{"offset":"+1:00","description":"Brussels, Copenhagen, Madrid, Paris"}},"email":"debbie.herrera@example.com","login":{"uuid":"46778861-dd34-4fbe-aa89-7c528a53d6ec","username":"organickoala807","password":"kong","salt":"2or8T46N","md5":"f7fa51746af5827fa16338758a15fad8","sha1":"c535c24bb5892b306601fd78521e7c542bf9cd07","sha256":"8061e8b31e62d4168767c62e0255db1a883e04a805f38d309cde06ac48fcdd1f"},"dob":{"date":"1965-04-06T11:39:40.418Z","age":58},"registered":{"date":"2004-11-15T04:41:34.844Z","age":19},"phone":"017687 22536","cell":"07022 855301","id":{"name":"NINO","value":"BH 68 66 28 Z"},"picture":{"large":"https://randomuser.me/api/portraits/women/53.jpg","medium":"https://randomuser.me/api/portraits/med/women/53.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/53.jpg"},"nat":"GB"}],"info":{"seed":"ef71809ea06d6808","results":1,"page":1,"version":"1.4"}}
+[2024-02-05T08:26:17.903+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=sqlite_randomuser, task_id=extracting_user, execution_date=20240205T082612, start_date=20240205T082616, end_date=20240205T082617
+[2024-02-05T08:26:17.950+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-05T08:26:18.015+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check

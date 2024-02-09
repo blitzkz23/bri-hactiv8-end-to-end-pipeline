@@ -1,0 +1,23 @@
+[2024-02-06T05:26:47.859+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: nyctaxi_elt.insert_data manual__2024-02-06T05:26:41.184748+00:00 [queued]>
+[2024-02-06T05:26:47.872+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: nyctaxi_elt.insert_data manual__2024-02-06T05:26:41.184748+00:00 [queued]>
+[2024-02-06T05:26:47.873+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-06T05:26:47.873+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-06T05:26:47.873+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-06T05:26:47.890+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): insert_data> on 2024-02-06 05:26:41.184748+00:00
+[2024-02-06T05:26:47.898+0000] {standard_task_runner.py:52} INFO - Started process 25419 to run task
+[2024-02-06T05:26:47.901+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'nyctaxi_elt', 'insert_data', 'manual__2024-02-06T05:26:41.184748+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/nyctaxi_elt.py', '--cfg-path', '/tmp/tmpgvwl7q91', '--error-file', '/tmp/tmpcx4rfgis']
+[2024-02-06T05:26:47.902+0000] {standard_task_runner.py:80} INFO - Job 47: Subtask insert_data
+[2024-02-06T05:26:47.966+0000] {task_command.py:371} INFO - Running <TaskInstance: nyctaxi_elt.insert_data manual__2024-02-06T05:26:41.184748+00:00 [running]> on host 9d3dd91d9998
+[2024-02-06T05:26:48.039+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Aldy
+AIRFLOW_CTX_DAG_ID=nyctaxi_elt
+AIRFLOW_CTX_TASK_ID=insert_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-06T05:26:41.184748+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-02-06T05:26:41.184748+00:00
+[2024-02-06T05:26:48.443+0000] {python.py:173} INFO - Done. Returned value was: None
+[2024-02-06T05:26:48.457+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=nyctaxi_elt, task_id=insert_data, execution_date=20240206T052641, start_date=20240206T052647, end_date=20240206T052648
+[2024-02-06T05:26:48.487+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-06T05:26:48.522+0000] {local_task_job.py:279} INFO - 2 downstream tasks scheduled from follow-on schedule check

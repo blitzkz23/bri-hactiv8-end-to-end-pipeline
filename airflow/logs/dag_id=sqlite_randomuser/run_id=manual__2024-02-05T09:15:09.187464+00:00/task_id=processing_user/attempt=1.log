@@ -1,0 +1,24 @@
+[2024-02-05T09:15:15.654+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.processing_user manual__2024-02-05T09:15:09.187464+00:00 [queued]>
+[2024-02-05T09:15:15.666+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.processing_user manual__2024-02-05T09:15:09.187464+00:00 [queued]>
+[2024-02-05T09:15:15.666+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T09:15:15.667+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-05T09:15:15.667+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T09:15:15.684+0000] {taskinstance.py:1389} INFO - Executing <Task(PythonOperator): processing_user> on 2024-02-05 09:15:09.187464+00:00
+[2024-02-05T09:15:15.691+0000] {standard_task_runner.py:52} INFO - Started process 313256 to run task
+[2024-02-05T09:15:15.693+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'sqlite_randomuser', 'processing_user', 'manual__2024-02-05T09:15:09.187464+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_randomuser.py', '--cfg-path', '/tmp/tmpjz7njjgh', '--error-file', '/tmp/tmp8xyq1gjp']
+[2024-02-05T09:15:15.694+0000] {standard_task_runner.py:80} INFO - Job 40: Subtask processing_user
+[2024-02-05T09:15:15.763+0000] {task_command.py:371} INFO - Running <TaskInstance: sqlite_randomuser.processing_user manual__2024-02-05T09:15:09.187464+00:00 [running]> on host fe2863c78e2f
+[2024-02-05T09:15:15.865+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=sqlite_randomuser
+AIRFLOW_CTX_TASK_ID=processing_user
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-05T09:15:09.187464+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-02-05T09:15:09.187464+00:00
+[2024-02-05T09:15:15.866+0000] {logging_mixin.py:115} INFO - Processed user data: {'name': {'title': 'Ms', 'first': 'Ea', 'last': 'Wibe'}, 'email': 'ea.wibe@example.com', 'phone': {'street': {'number': 5571, 'name': 'Ulsrudfaret'}, 'city': 'Fosnavåg', 'state': 'Sør-Trøndelag', 'country': 'Norway', 'postcode': '2170', 'coordinates': {'latitude': '40.8589', 'longitude': '154.2366'}, 'timezone': {'offset': '+5:45', 'description': 'Kathmandu'}}}
+[2024-02-05T09:15:15.866+0000] {python.py:173} INFO - Done. Returned value was: None
+[2024-02-05T09:15:15.882+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=sqlite_randomuser, task_id=processing_user, execution_date=20240205T091509, start_date=20240205T091515, end_date=20240205T091515
+[2024-02-05T09:15:15.913+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-05T09:15:15.945+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check

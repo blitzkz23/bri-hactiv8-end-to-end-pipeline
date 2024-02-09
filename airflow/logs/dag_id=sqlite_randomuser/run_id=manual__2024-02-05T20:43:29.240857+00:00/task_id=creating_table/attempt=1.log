@@ -1,0 +1,32 @@
+[2024-02-05T20:43:30.501+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.creating_table manual__2024-02-05T20:43:29.240857+00:00 [queued]>
+[2024-02-05T20:43:30.512+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.creating_table manual__2024-02-05T20:43:29.240857+00:00 [queued]>
+[2024-02-05T20:43:30.513+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T20:43:30.513+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-05T20:43:30.514+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T20:43:30.529+0000] {taskinstance.py:1389} INFO - Executing <Task(PostgresOperator): creating_table> on 2024-02-05 20:43:29.240857+00:00
+[2024-02-05T20:43:30.535+0000] {standard_task_runner.py:52} INFO - Started process 339912 to run task
+[2024-02-05T20:43:30.538+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'sqlite_randomuser', 'creating_table', 'manual__2024-02-05T20:43:29.240857+00:00', '--job-id', '69', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_randomuser.py', '--cfg-path', '/tmp/tmphcdtkmxq', '--error-file', '/tmp/tmp4i6il795']
+[2024-02-05T20:43:30.539+0000] {standard_task_runner.py:80} INFO - Job 69: Subtask creating_table
+[2024-02-05T20:43:30.605+0000] {task_command.py:371} INFO - Running <TaskInstance: sqlite_randomuser.creating_table manual__2024-02-05T20:43:29.240857+00:00 [running]> on host fe2863c78e2f
+[2024-02-05T20:43:30.696+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=sqlite_randomuser
+AIRFLOW_CTX_TASK_ID=creating_table
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-05T20:43:29.240857+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-02-05T20:43:29.240857+00:00
+[2024-02-05T20:43:30.714+0000] {base.py:68} INFO - Using connection ID '***_postgres' for task execution.
+[2024-02-05T20:43:30.718+0000] {sql.py:315} INFO - Running statement: CREATE TABLE IF NOT EXISTS users(
+                firstname TEXT NOT NULL,
+                lastname TEXT NOT NULL,
+                country TEXT NOT NULL,
+                username TEXT NOT NULL,
+                password TEXT NOT NULL,
+                email TEXT NOT NULL PRIMARY KEY), parameters: None
+[2024-02-05T20:43:30.721+0000] {postgres.py:94} INFO - NOTICE:  relation "users" already exists, skipping
+
+[2024-02-05T20:43:30.736+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=sqlite_randomuser, task_id=creating_table, execution_date=20240205T204329, start_date=20240205T204330, end_date=20240205T204330
+[2024-02-05T20:43:30.791+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-05T20:43:30.842+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check

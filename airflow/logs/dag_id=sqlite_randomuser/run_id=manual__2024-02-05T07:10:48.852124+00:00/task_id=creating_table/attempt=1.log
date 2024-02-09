@@ -1,0 +1,41 @@
+[2024-02-05T07:10:49.862+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.creating_table manual__2024-02-05T07:10:48.852124+00:00 [queued]>
+[2024-02-05T07:10:49.875+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: sqlite_randomuser.creating_table manual__2024-02-05T07:10:48.852124+00:00 [queued]>
+[2024-02-05T07:10:49.876+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T07:10:49.876+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2024-02-05T07:10:49.877+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2024-02-05T07:10:49.892+0000] {taskinstance.py:1389} INFO - Executing <Task(SqliteOperator): creating_table> on 2024-02-05 07:10:48.852124+00:00
+[2024-02-05T07:10:49.898+0000] {standard_task_runner.py:52} INFO - Started process 27788 to run task
+[2024-02-05T07:10:49.901+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'sqlite_randomuser', 'creating_table', 'manual__2024-02-05T07:10:48.852124+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/sqlite_randomuser.py', '--cfg-path', '/tmp/tmpdgx1aatx', '--error-file', '/tmp/tmp_txjzl3h']
+[2024-02-05T07:10:49.902+0000] {standard_task_runner.py:80} INFO - Job 6: Subtask creating_table
+[2024-02-05T07:10:49.967+0000] {task_command.py:371} INFO - Running <TaskInstance: sqlite_randomuser.creating_table manual__2024-02-05T07:10:48.852124+00:00 [running]> on host fe2863c78e2f
+[2024-02-05T07:10:50.040+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=sqlite_randomuser
+AIRFLOW_CTX_TASK_ID=creating_table
+AIRFLOW_CTX_EXECUTION_DATE=2024-02-05T07:10:48.852124+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-02-05T07:10:48.852124+00:00
+[2024-02-05T07:10:50.041+0000] {sqlite.py:59} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS users(
+                firstname TEXT NOT NULL,
+                lastname TEXT NOT NULL,
+                country TEXT NOT NULL,
+                username TEXT NOT NULL,
+                password TEXT NOT NULL,
+                email TEXT NOT NULL PRIMARY KEY
+            );
+        
+[2024-02-05T07:10:50.051+0000] {base.py:68} INFO - Using connection ID 'sql_lite' for task execution.
+[2024-02-05T07:10:50.051+0000] {sql.py:315} INFO - Running statement: CREATE TABLE IF NOT EXISTS users(
+                firstname TEXT NOT NULL,
+                lastname TEXT NOT NULL,
+                country TEXT NOT NULL,
+                username TEXT NOT NULL,
+                password TEXT NOT NULL,
+                email TEXT NOT NULL PRIMARY KEY
+            ), parameters: []
+[2024-02-05T07:10:50.064+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=sqlite_randomuser, task_id=creating_table, execution_date=20240205T071048, start_date=20240205T071049, end_date=20240205T071050
+[2024-02-05T07:10:50.117+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-02-05T07:10:50.152+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check
