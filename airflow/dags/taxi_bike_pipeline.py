@@ -102,7 +102,6 @@ def insert_taxi(dir):
         
         _LOGGER.info(print(df_taxi.head()))
         _LOGGER.warning(df_taxi.head())
-        _LOGGER.debug("cok")
         insert_to_postgres_taxi(df_taxi)
 
 def clean_and_insert_bike(dir):
@@ -287,7 +286,6 @@ with DAG('taxi_bike_pipeline', schedule_interval='@daily',
         python_callable=clean_and_insert_bike,
         op_kwargs={"dir": "/opt/airflow/dags/"},
     )
-   
 
 
 # Set task dependencies
