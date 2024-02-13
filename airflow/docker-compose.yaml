@@ -10,6 +10,7 @@ x-common:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
+    - ./scripts:/opt/airflow/scripts
     - /var/run/docker.sock:/var/run/docker.sock
 
 x-depends-on:
@@ -61,7 +62,7 @@ services:
     command:
       - -c
       - |
-        mkdir -p /sources/logs /sources/dags /sources/plugins /sources/data
+        mkdir -p /sources/logs /sources/dags /sources/plugins /sources/scripts
         apt-get update && apt-get install -y unzip
-        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins,data}
+        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins,scripts}
         exec /entrypoint airflow version
