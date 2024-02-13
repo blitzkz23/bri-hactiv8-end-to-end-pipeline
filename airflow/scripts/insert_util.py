@@ -2,6 +2,11 @@ import psycopg2
 import logging
 import traceback
 import pandas as pd
+import numpy as np
+from create_df_util import *
+
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s:%(funcName)s:%(levelname)s:%(message)s')
 
 try:
     conn = psycopg2.connect(
@@ -38,6 +43,18 @@ def insert_to_postgres(dir):
                 conn.commit()
                 cur.close()
                 conn.close()
+                
+def create_new_tables_in_postgres():
+    try:
+        cur.execute("""CREATE TABLE IF NOT EXISTS churn_modelling_creditscore (geography VARCHAR(50), gender VARCHAR(20), avg_credit_score FLOAT, total_exited INTEGER)""")
+        cur.execute("""CREATE TABLE IF NOT EXISTS churn_modelling_exited_age_correlation (geography VARCHAR(50), gender VARCHAR(20), exited INTEGER, avg_age FLOAT, avg_salary FLOAT,number_of_exited_or_not INTEGER)""")
+        cur.execute("""CREATE TABLE IF NOT EXISTS churn_modelling_exited_salary_correlation  (exited INTEGER, is_greater INTEGER, correlation INTEGER)""")
+        logging.info("3 tables created successfully in Postgres server")
+    except Exception as e:
+        traceback.print_exc()
+        logging.error(f'Tables cannot be created due to: {e}')
+        
+
 
 def insert_creditscore_table(df_creditscore):
     query = "INSERT INTO churn_modelling_creditscore (geography, gender, avg_credit_score, total_exited) VALUES (%s,%s,%s,%s)"
@@ -70,3 +87,18 @@ def insert_exited_salary_correlation_table(df_exited_salary_correlation):
         row_count += 1
 
     logging.info(f"{row_count} rows inserted into table churn_modelling_exited_salary_correlation")
+    
+def create_df_and_insert():
+    main_df = create_base_df(cur)
+    df_creditscore = create_creditscore_df(main_df)
+    df_exited_age_correlation = create_exited_age_correlation(main_df)
+    df_exited_salary_correlation = create_exited_salary_correlation(main_df)
+
+    create_new_tables_in_postgres()
+    insert_creditscore_table(df_creditscore)
+    insert_exited_age_correlation_table(df_exited_age_correlation)
+    insert_exited_salary_correlation_table(df_exited_salary_correlation)
+
+    conn.commit()
+    cur.close()
+    conn.close()
